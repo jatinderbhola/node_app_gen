@@ -1,0 +1,43 @@
+{
+  "name": "rugcopro",
+  "scripts": {
+  },
+  "env": {
+    "AWS_ACCESS_KEY_ID":{
+      "required":true
+    },
+    "AWS_S3_BASE_URL":{
+      "required":true
+    },
+    "AWS_SECRET_ACCESS_KEY":{
+      "required":true
+    },
+    "MONGODB_ADMIN":{
+      "required":true
+    },
+    "MONGODB_OPS":{
+      "required":true
+    },
+    "NODE_MODULES_CACHE":{
+      "required":true
+    },
+    "PROXIMO_URL":{
+      "required":true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "mongolab",
+    "papertrail",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

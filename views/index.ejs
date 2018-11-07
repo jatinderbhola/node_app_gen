@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/css/lib.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/libs.js"></script>
+    <script src="/js/rugcopro.min.js"></script>
+</head>
+
+<body ng-app="app" layout="row" ng-cloak>
+    <h2> index </h2>
+    <p> this is index page.</p>
+
+    <md-content md-scroll-y flex>
+        <div flex="noshrink">
+            <!-- This is where top level sections are loaded -->
+            <div class="page-container">
+                <div class="page" ui-view></div>
+            </div>
+        </div>
+    </md-content>
+</body>
+
+</html>
