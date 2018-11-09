@@ -8,7 +8,7 @@ var json2csv = require('json2csv');
 
 var validModels = {};
 var modelSchemas = {};
-
+/*
 // load all the files in the models directory to figure out which ones are valid schemas
 // load all the schemas that are used at the top level key database
 var fs = require('fs');
@@ -47,7 +47,7 @@ fs.readdir("./back-end/api/models/working", function(err, fileNames) {
     }
     console.log("Working Schema files loaded");
 });
-
+*/
 
 
 

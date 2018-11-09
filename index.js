@@ -6,7 +6,7 @@ var autoIncrement = require('mongoose-auto-increment');
 var modelRouting = require("./back-end/api/model_routing");
 var multiparty = require('multiparty');
 var _ = require('underscore');
-
+var path = require('path');
 var app = express();
 app.set("ready", false);
 
@@ -26,6 +26,7 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+
 /* 
     this set the favicon.ico request status 204
     by setting 204 it means that the server receives the request but there is nothing to send it back to client
@@ -35,11 +36,21 @@ app.get('/favicon.ico', function(req, res) {
     res.sendStatus(204)
 });
 
+function serve_partial(req, res) {
+    var stripped = req.url.split('.')[0];
+    var requestedView = path.join('./', stripped);
+    res.render(requestedView, function(err, html) {
+        if (err) {
+            res.render('404');
+        } else {
+            res.send(html);
+        }
+    });
+}
 
-
-app.use('/home/*', function(req, res) {
-    res.render(req.originalUrl);
-});
+app.get('/home', serve_partial);
+app.get('/menu', serve_partial);
+app.get('/home/*', serve_partial);
 
 
 app.listen(app.get('port'), function() {

@@ -9,14 +9,19 @@
         .config(['$stateProvider',
             function($stateProvider) {
 
-                $stateProvider.state({
-                    name: "app",
-                    url: "/home",
-                    views: {
-                        'home': { controller: 'timerCtrl', templateUrl: 'home.ejs' },
-                        '@': { controller: 'tabCtrl', templateUrl: 'top.html' }
-                    }
-                });
+                $stateProvider
+                    .state({
+                        name: "app",
+                        url: "/",
+                        views: {
+                            'menue': { templateUrl: 'home/menu_template.ejs' },
+                        }
+                    })
+                    .state('report', {
+                        views: {
+                            'menue': { templateUrl: 'home/menu_template.ejs' }
+                        }
+                    })
 
                 $stateProvider.state({
                     name: "menu",
@@ -25,7 +30,7 @@
                 });
                 $stateProvider.state({
                     name: "home",
-                    url: "/",
+                    url: "/home",
                     templateUrl: 'home/home.ejs'
                 });
                 $stateProvider.state({

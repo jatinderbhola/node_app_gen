@@ -221,8 +221,8 @@ module.exports = function(grunt) {
        	grunt.file.delete(gruntConfig.concat.dist.dest);
        });*/
 
-    grunt.registerTask('default', ['copy', 'concat', 'uglify', 'jasmine_node', 'jasmine' /*, 'cleanup'*/ ]);
-    grunt.registerTask('debug', ['copy', 'concat', 'jasmine_node', 'jasmine']);
+    grunt.registerTask('default', ['copy', 'concat', 'uglify' /*, 'cleanup'*/ ]);
+    grunt.registerTask('debug', ['copy', 'concat']);
     grunt.registerTask('lint', ['jshint']);
 
     /**

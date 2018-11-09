@@ -6,12 +6,22 @@
     <link rel="stylesheet" href="/css/lib.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/js/libs.js"></script>
-    <script src="/js/rugcopro.min.js"></script>
+    <script src="/js/node_app_gen.min.js"></script>
 </head>
 
-<body ng-app="app" layout="row" ng-cloak>
+<body ng-app="app" layout="column" ng-cloak>
     <h2> index </h2>
     <p> this is index page.</p>
+
+    <!-- <ul>
+        <li>
+            <a ui-sref="home">home</a>
+            <a ui-sref="menu">menu</a>
+            <a ui-sref="menu2">menu2</a>
+        </li>
+    </ul> -->
+
+    <div ui-view="menue"></div>
 
     <md-content md-scroll-y flex>
         <div flex="noshrink">
